@@ -15,6 +15,7 @@ public class    StringCalculatorTest {
     private static final String VALID_INPUT_STRING_ONE_ARGUMENT = "1";
     private static final String EMPTY_STRING = "";
     private static final String MULTI_ARGUMENT_INPUT = "1,2,3";
+    private static final String MULTI_ARGUMENT_INPUT_NEWLINE_SEPARATOR = "1\n2,3";
 
     @Before
     public void setup() {
@@ -24,6 +25,7 @@ public class    StringCalculatorTest {
             put(VALID_INPUT_STRING_ONE_ARGUMENT, 1);
             put(EMPTY_STRING, 0);
             put(MULTI_ARGUMENT_INPUT, 6);
+            put(MULTI_ARGUMENT_INPUT_NEWLINE_SEPARATOR, 6);
         }};
     }
 
@@ -45,6 +47,11 @@ public class    StringCalculatorTest {
     @Test
     public void add_MultipleArguments() {
         test(MULTI_ARGUMENT_INPUT);
+    }
+
+    @Test
+    public void add_MultipleArgumentsIncludingNewLineAsSeparator() {
+        test(MULTI_ARGUMENT_INPUT_NEWLINE_SEPARATOR);
     }
 
     private void test(String input) {
