@@ -1,4 +1,4 @@
-package StringCalculator;
+package ProjectStringCalculator;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -7,15 +7,14 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.*;
-
-public class StringCalculatorTest {
+public class    StringCalculatorTest {
 
     StringCalculator stringCalculator;
     Map<String, Integer> preCalculatedResults;
     private static final String VALID_INPUT_STRING = "1,2";
     private static final String VALID_INPUT_STRING_ONE_ARGUMENT = "1";
     private static final String EMPTY_STRING = "";
+    private static final String MULTI_ARGUMENT_INPUT = "1,2,3";
 
     @Before
     public void setup() {
@@ -24,11 +23,12 @@ public class StringCalculatorTest {
             put(VALID_INPUT_STRING, 3);
             put(VALID_INPUT_STRING_ONE_ARGUMENT, 1);
             put(EMPTY_STRING, 0);
+            put(MULTI_ARGUMENT_INPUT, 6);
         }};
     }
 
     @Test
-    public void add_HappyCase() {
+    public void add_TwoArguments() {
         test(VALID_INPUT_STRING);
     }
 
@@ -40,6 +40,11 @@ public class StringCalculatorTest {
     @Test
     public void add_HappyCaseNoArguments() {
         test(EMPTY_STRING);
+    }
+
+    @Test
+    public void add_MultipleArguments() {
+        test(MULTI_ARGUMENT_INPUT);
     }
 
     private void test(String input) {

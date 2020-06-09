@@ -1,4 +1,4 @@
-package StringCalculator;
+package ProjectStringCalculator;
 
 public class StringCalculator {
 
@@ -15,7 +15,12 @@ public class StringCalculator {
             case 2 :
                 // 2 numbers
                 return Integer.parseInt(numbersList[0]) + Integer.parseInt(numbersList[1]);
+            default :
+                int sum = 0;
+                for (int i=0; i<numbersList.length; i++) {
+                    sum += Integer.parseInt(numbersList[i]);
+                }
+                return sum;
         }
-        return 0;
     }
 }
